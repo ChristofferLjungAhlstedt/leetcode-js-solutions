@@ -21,30 +21,25 @@ function sortList(lists) { // THis works, But is not a linked list
 function LinkedListFactory() {
     let head = null;
     let length = 0;
-  
     return {
-      append
+        append
     };
-  
     function append(element) {
-      const node = {
-        element,
-        next: null,
-      };
+        const node = {
+            element,
+            next: null,
+        };
+        if (head === null) {
+            head = node
+        } else {
+            let currentNode = head;
   
-      if (head === null) {
-        head = node
-      } else {
-        let currentNode = head;
-  
-        while (currentNode.next !== null) {
-          currentNode = currentNode.next;
+            while (currentNode.next !== null) {
+                currentNode = currentNode.next;
+            }
+            currentNode.next = node;
         }
-  
-        currentNode.next = node;
-      }
-  
-      length++;
+        length++;
     }
 }
 
