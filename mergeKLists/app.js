@@ -11,14 +11,14 @@ function sortList(lists) { // THis works, But is not a linked list
         bigList.push(lists[i])
     }
     bigList.sort();
-    const sortedLinked = LinkedListFactory()
+    const sortedLinked = linkedListMaker()
     for (let i = 0; i < bigList; i++) {
         sortedLinked.append(bigList[i]);
     }
-    return sortedLinked;
+    return sortedLinked.next;
 }
 
-function LinkedListFactory() {
+function linkedListMaker() {
     let head = null;
     let length = 0;
     return {
@@ -44,3 +44,4 @@ function LinkedListFactory() {
 }
 
 console.log(sortList([[1,4,5],[1,3,4],[2,6]]));
+ 
